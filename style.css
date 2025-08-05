@@ -1,0 +1,392 @@
+:root {
+    --bg-color: #0D1F1C;
+    --primary-color: #ffffff;
+    --secondary-color: #a9a9b3;
+    --accent-color: #00B8A9; /* A vibrant purple */
+    --glow-color: rgba(138, 43, 226, 0.75);
+    --glow-color-light: rgba(191, 126, 255, 0.8);
+    --card-bg: #1a1a1c;
+    --border-color: #333333;
+    
+    --font-headline: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.1) 0%, transparent 30%),
+                      radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 30%);
+    color: var(--primary-color);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* --- Section Fade-in Animation --- */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* --- Typography & General Styles --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+.main-headline {
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: -40px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 2.0rem;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.7), 0 0 8px var(--glow-color-light);
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+strong {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.highlight {
+    background-color: rgba(138, 43, 226, 0.1);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-color);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--primary-color);
+}
+
+/* --- Text Glow Effect --- */
+.glow-text {
+    color: #fff;
+    /* A more subtle glow effect */
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.10),
+                 0 0 10px var(--glow-color-light);
+}
+
+/* --- Timer Section --- */
+#timer-section .timer-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 5px 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#timer-section .timer-box p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#countdown {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2px 0;
+    transition: text-shadow 0.1s ease;
+    color: #ff4d4d;
+}
+
+/* --- Button Styles --- */
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.btn {
+    font-family: var(--font-headline);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+    background-color: var(--accent-color);
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--glow-color-light);
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.btn.disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+.btn.disabled:hover::before {
+    opacity: 0;
+}
+
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* --- Comparison Box --- */
+.comparison-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+}
+.comparison-columns {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    padding-bottom: 4rem;
+}
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.outcome {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+.powerful-outcome {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-style: normal;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+
+/* --- Ritual List --- */
+.ritual-list {
+    list-style: none;
+    padding: 0;
+}
+.ritual-list li {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+.delivery-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* --- FAQ --- */
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-item p {
+    margin: 0;
+}
+.faq-item p:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+        gap: 40px;
+    }
+    .main-headline {
+        font-size: 2.5rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    .comparison-columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-headline {
+        font-size: 2rem;
+    }
+    #countdown {
+        font-size: 3rem;
+    }
+    .btn {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+.timer-red {
+    color: #ff4d4d; /* Red text color */
+    /* Red glow effect */
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.6), 0 0 20px rgba(255, 77, 77, 0.4);
+}
+
+.btn-indian {
+    background-color: #3c6af1;
+}
+
+.btn-indian.glow-on-hover:hover {
+    box-shadow: 0 0 25px rgba(88, 80, 244, 0.8); /* Saffron Glow */
+}
+
+.cta-subheadline {
+    text-align: center;
+     margin-top: 3rem;
+}
+
+.cta-subheadline + p {
+    margin-top: 0;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* This makes sure the text inside the footer has no extra space */
+.site-footer p {
+    margin: 0;
+}
+
+.delivery-guarantee {
+    opacity: 0.5;
+    text-align: center;
+}
+
+#about {
+    margin-top: -60px;
+}
+
+.space-below {
+    margin-bottom: 40px;
+}
+
+.btn-indian {
+    color: #d0c8c8; /* Sets the text color to black */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
