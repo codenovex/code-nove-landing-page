@@ -256,17 +256,6 @@ li {
     font-style: italic;
     color: var(--secondary-color);
 }
-.powerful-outcome {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-style: normal;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    text-align: left;
-    text-transform: uppercase;
-    padding-left: 20px;
-}
 
 /* --- Ritual List --- */
 .ritual-list {
@@ -309,7 +298,7 @@ li {
         gap: 40px;
     }
     .main-headline {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
     }
     .tagline {
         font-size: 1.2rem;
@@ -317,8 +306,21 @@ li {
     h3 {
         font-size: 1.8rem;
     }
-    .comparison-columns {
-        flex-direction: column;
+
+    /* This makes the timer box shorter on mobile */
+    #timer-section .timer-box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+    /* Rule 1: Make the big timer number smaller on mobile */
+    #countdown {
+    font-size: 3rem; /* Was 4rem on desktop, now smaller for mobile */
+    }
+
+    /* Rule 2: Make the text above and below the timer smaller */
+    #timer-section .timer-box p {
+    font-size: 0.9rem; /* Make the supporting text smaller */
     }
 }
 
@@ -387,6 +389,6 @@ li {
 }
 
 .btn-indian {
-    color: #d0c8c8; /* Sets the text color to black */
+    color: #f6f3f3; /* Sets the text color to black */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
 }
