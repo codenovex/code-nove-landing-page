@@ -31,7 +31,7 @@ body {
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
 }
 
 /* --- Section Fade-in Animation --- */
@@ -50,13 +50,13 @@ h1, h2, h3, h4 {
 }
 
 .main-headline {
-    font-size: 3.8rem;
+    font-size: 4.5rem;
     text-align: center;
     margin-bottom: 1rem;
     margin-top: -40px;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 3px;
-    word-spacing: 4px;
+    word-spacing: 3px;
 }
 
 .tagline {
@@ -127,9 +127,9 @@ li {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 5px 25px;
+    padding: 8px 25px 5px 25px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
 }
 
 #timer-section .timer-box p {
@@ -139,9 +139,9 @@ li {
 
 #countdown {
     font-family: var(--font-headline);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin: 2px 0;
+    margin: 0;
     transition: text-shadow 0.1s ease;
     color: #ff4d4d;
 }
@@ -237,7 +237,7 @@ li {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 30px;
+    padding: 5px 30px;
     margin-top: 30px;
 }
 .comparison-columns {
@@ -255,6 +255,7 @@ li {
     margin-top: 20px;
     font-style: italic;
     color: var(--secondary-color);
+    margin-bottom: 0;
 }
 
 /* --- Ritual List --- */
@@ -391,4 +392,20 @@ li {
 .btn-indian {
     color: #f6f3f3; /* Sets the text color to black */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.price-info {
+    text-align: center;
+    margin-top: 15px; /* Adds some space below the timer box */
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* This targets only the FIRST paragraph inside the timer box */
+#timer-section .timer-box p:first-child {
+    font-size: 0.9rem; /* Make the font size smaller */
+}
+
+.comparison-box ul {
+    margin-bottom: 0;
 }
