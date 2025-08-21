@@ -3,8 +3,8 @@
     --primary-color: #ffffff;
     --secondary-color: #a9a9b3;
     --accent-color: #00B8A9; /* A vibrant purple */
-    --glow-color: rgba(138, 43, 226, 0.75);
-    --glow-color-light: rgba(191, 126, 255, 0.8);
+    --glow-color: hsla(0, 0%, 4%, 0.75);
+    --glow-color-light: rgba(13, 13, 13, 0.8);
     --card-bg: #1a1a1c;
     --border-color: #333333;
     
@@ -146,14 +146,11 @@ li {
     color: #ff4d4d;
 }
 
-/* --- Button Styles --- */
 .cta-group {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    flex-direction: row; /* This makes it side-by-side */
+    gap: 15px;           /* This sets the space between the buttons */
     margin-top: 25px;
-    width: 100%;
 }
 
 .btn {
@@ -175,7 +172,7 @@ li {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
+    flex: 1;
     box-sizing: border-box;
     text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.5);
 }
